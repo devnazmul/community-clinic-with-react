@@ -4,7 +4,7 @@ import heroImg from '../../../../images/hero.gif';
 
 const Hero = () => {
     return (
-        <div id="home" className="Hero pt-40 lg:pt-20 h-screen block md:flex justify-between items-center md:px-20 px-10">
+        <div id="home" className="Hero pt-40 pb-20 lg:pt-20 block md:flex justify-between items-center md:px-20 px-10">
             <div className="w-full md:w-1/2 text-left">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold text-gray-700">We are always ready to take care your <span className=" text-textPrimary">health</span></h1>
                 <p className="mt-10">At health grades, We tate the guesswork out of finding the right doctors and care for you and your family.</p>

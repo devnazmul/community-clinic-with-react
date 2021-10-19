@@ -4,7 +4,7 @@
 
 ## This Site Have:
 * Responsive 
-* PrivateRoute implimentation
+* PrivateRoute implementation
 * Firebase Authentication
 * Firebase Hosting
 * Environment variable

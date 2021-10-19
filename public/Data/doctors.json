@@ -3,18 +3,18 @@
         "id": "1",
         "doctorName":"Dr. Khalid Abbed, M.D.",
         "jobStatus":"Surgeon",
-        "image": "https://i.ibb.co/K5vy4HD/1-1.png"
+        "image": "https://i.ibb.co/zbRv9TY/1-1.png"
     },
     {
         "id": "2",
         "doctorName":"Dr. Myles. B. Abbott, M.D.",
         "jobStatus":"Pediatricians",
-        "image": "https://i.ibb.co/Z1MhVnx/2-1.png"
+        "image": "https://i.ibb.co/hycSwZz/2-1.png"
     },
     {
         "id": "3",
         "doctorName":"Dr.Mona.M.Abaza, M.D",
         "jobStatus":"Otolaryngologist",
-        "image": "https://i.ibb.co/rf9kyKq/3-1.png"
+        "image": "https://i.ibb.co/V94RRn4/3-1.png"
     }
 ]

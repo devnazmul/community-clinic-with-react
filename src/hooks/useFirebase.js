@@ -24,7 +24,9 @@ const useFirebase = () => {
       .catch((err) => console.log(err))
       .finally(()=>{
         setIsLoading(false);
+        window.location.reload();
       });
+      
   };
   // User Login with Email
   const signUpWithEmail = (email, password) => {
@@ -32,7 +34,10 @@ const useFirebase = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => { setUser(result.user) })
       .catch((err) => alert(err.message))
-      .finally(()=>{ setIsLoading(false) });
+      .finally(()=>{ 
+        setIsLoading(false);
+        window.location.reload();
+       });
   };
 
   const signInWithEmail = (email, password) => {
@@ -43,7 +48,10 @@ const useFirebase = () => {
         let errorMessage = error.message.split("(")[1].split(")")[0];
         alert(errorMessage);
       })
-      .finally(()=>{ setIsLoading(false) });
+      .finally(()=>{ 
+        setIsLoading(false);
+        window.location.reload();
+       });
   };
 
   // User Logout

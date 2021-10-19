@@ -49,7 +49,7 @@ function App() {
             <PrivateRoute exact path="/purches">
               <Purches />
             </PrivateRoute>
-            <PrivateRoute exact path="/service_details/:desc/:name/:price">
+            <PrivateRoute exact path="/service_details/:id">
               <ServiceDetails />
             </PrivateRoute>
             <Route path="*">

@@ -23,7 +23,7 @@ const Services = () => {
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap -m-4">
-            {services.map(service => <Card  key={service.id} id={service.id}  image={service.image} serviceName={service.serviceName} desc={service.desc} price={service.price} /> )}
+            {services.map(service => <Card  key={service.id} id={service.id}  image={service.image} serviceName={service.serviceName} desc={service.desc} /> )}
           </div>
         </div>
       </section>

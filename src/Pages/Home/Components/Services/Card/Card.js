@@ -18,7 +18,7 @@ export default function Card({id, serviceName, image, desc, price}) {
                     {desc}
                   </p>
                   <div className="flex justify-center items-center flex-wrap ">
-                    <NavLink to={`/service_details/${desc}/${serviceName}/${price}`} className="px-10 mt-5 hover:bg-green-400 py-1 rounded-full bg-bgPrimary text-white inline-flex items-center md:mb-2 lg:mb-0">
+                    <NavLink to={`/service_details/${id}`} className="px-10 mt-5 hover:bg-green-400 py-1 rounded-full bg-bgPrimary text-white inline-flex items-center md:mb-2 lg:mb-0">
                       Checkout
                     </NavLink>
                   </div>

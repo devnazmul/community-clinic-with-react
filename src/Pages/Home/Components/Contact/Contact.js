@@ -2,14 +2,14 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="text-gray-600 body-font relative pt-12">
+    <div id="contact" className="text-gray-600 body-font relative pt-12">
       <div className="absolute inset-0 bg-gray-300">
         <iframe
           width="100%"
           height="100%"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
+          frameBorder="0"
+          marginHeight="0"
+          marginWidth="0"
           title="map"
           scrolling="no"
           src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
@@ -73,7 +73,7 @@ const Contact = () => {
             ></textarea>
           </div>
           <button className="text-white bg-bgPrimary border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
-            Button
+            Contact Us
           </button>
         </div>
       </div>

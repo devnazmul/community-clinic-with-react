@@ -10,7 +10,7 @@ const Doctor = () => {
         .then(data => setDoctors(data))
     },[]);
     return (
-        <div className="Services bg-white pt-28 pb-20">
+        <div id="doctors" className="Services bg-white pt-28 pb-20">
         <h2 className="text-center text-gray-700 text-4xl font-bold mb-5">
           Ours Carefull <span className="text-textPrimary"> Doctors</span>
         </h2>

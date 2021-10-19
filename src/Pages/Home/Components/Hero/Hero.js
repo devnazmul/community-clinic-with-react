@@ -3,7 +3,7 @@ import heroImg from '../../../../images/hero.gif';
 
 const Hero = () => {
     return (
-        <div className="Hero pt-20 h-screen flex justify-between items-center px-20">
+        <div id="home" className="Hero pt-20 h-screen flex justify-between items-center px-20">
             <div className="w-1/2 text-left">
                 <h1 className="text-7xl font-bold text-gray-700">We are always ready to take care your <span className=" text-textPrimary">health</span></h1>
                 <p className="mt-10">At health grades, We tate the guesswork out of finding the right doctors and care for you and your family.</p>

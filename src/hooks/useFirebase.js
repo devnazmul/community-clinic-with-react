@@ -1,10 +1,11 @@
 import {
   getAuth,
-  sendSignInLinkToEmail,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
-  onAuthStateChanged
+  onAuthStateChanged,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 
@@ -12,44 +13,70 @@ const useFirebase = () => {
   const auth = getAuth();
   const [user, setUser] = useState({});
 
-// User Login With Google
+  const [isLoading, setIsLoading] = useState(true);
+
+  // User Login With Google
   const signinWithGoogle = () => {
+    setIsLoading(true);
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
       .then((result) => setUser(result))
-      .catch((err) => console.log(err));
-  };
-// User Login with Email
-  const signinWithEmail = (email, password) => {
-    sendSignInLinkToEmail(auth, email, password)
-      .then((result) => setUser(result))
-      .catch((err) => console.log(err));
-  };
-// User Logout
-  const logOut = () => {
-    signOut(auth).then(() => {
-      // Sign-out successful.
-    }).catch((error) => {
-      // An error happened.
-    });
-  };
-// User Observer
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, user => {
-        if (user) {
-          setUser(user);
-        } else {
-          setUser({});
-        }
+      .catch((err) => console.log(err))
+      .finally(()=>{
+        setIsLoading(false);
       });
-      return () => unsubscribe;
-  },[])
+  };
+  // User Login with Email
+  const signUpWithEmail = (email, password) => {
+    setIsLoading(true);
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => { setUser(result.user) })
+      .catch((err) => alert(err.message))
+      .finally(()=>{ setIsLoading(false) });
+  };
+
+  const signInWithEmail = (email, password) => {
+    setIsLoading(true);
+    signInWithEmailAndPassword(auth, email, password)
+      .then((result) => { setUser(result.user) })
+      .catch((error) => {
+        let errorMessage = error.message.split("(")[1].split(")")[0];
+        alert(errorMessage);
+      })
+      .finally(()=>{ setIsLoading(false) });
+  };
+
+  // User Logout
+  const logOut = () => {
+    setIsLoading(true);
+    signOut(auth)
+      .then(() => {
+        setUser({});
+       })
+      .catch((error) => { alert(error.message)})
+      .finally(()=>{ setIsLoading(false) });
+  };
+
+  // User Observer
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser({});
+      }
+      setIsLoading(false);
+    });
+    return () => unsubscribe;
+  }, []);
 
   return {
     user,
     signinWithGoogle,
-    signinWithEmail,
-    logOut
+    signInWithEmail,
+    signUpWithEmail,
+    logOut,
+    isLoading
   };
 };
 

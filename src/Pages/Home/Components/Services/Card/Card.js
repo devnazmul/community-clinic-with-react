@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
 
-export default function Card({id, serviceName, image, desc}) {
+export default function Card({id, serviceName, image, desc, price}) {
     return (
         <div className="p-4 md:w-1/2 lg:w-1/3">
               <div className="h-full border-2 transition duration-500 ease-in-out hover:shadow-xl border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
@@ -18,7 +18,7 @@ export default function Card({id, serviceName, image, desc}) {
                     {desc}
                   </p>
                   <div className="flex justify-center items-center flex-wrap ">
-                    <NavLink to={`/service-details${id}`} className="px-10 mt-5 hover:bg-green-400 py-1 rounded-full bg-bgPrimary text-white inline-flex items-center md:mb-2 lg:mb-0">
+                    <NavLink to={`/service_details/${desc}/${serviceName}/${price}`} className="px-10 mt-5 hover:bg-green-400 py-1 rounded-full bg-bgPrimary text-white inline-flex items-center md:mb-2 lg:mb-0">
                       Checkout
                     </NavLink>
                   </div>

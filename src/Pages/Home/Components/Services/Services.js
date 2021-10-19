@@ -12,8 +12,8 @@ const Services = () => {
     .then(data => {setServices(data)})
   }, [])
   return (
-    <div id="services" className="Services bg-gray-100 pt-28 pb-20">
-      <h2 className="text-center text-gray-700 text-4xl font-bold mb-5">
+    <div id="services" className="Services bg-gray-100 pt-36 pb-20">
+      <h2 className="text-3xl text-center text-gray-700 md:text-4xl font-bold mb-5">
         Our Wide Range Of Medical <span className="text-textPrimary"> Services</span>
       </h2>
       <p className="text-gray-400">
@@ -23,7 +23,7 @@ const Services = () => {
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap -m-4">
-            {services.map(service => <Card key={service.id} image={service.image} serviceName={service.serviceName} desc={service.desc} /> )}
+            {services.map(service => <Card  key={service.id} id={service.id}  image={service.image} serviceName={service.serviceName} desc={service.desc} price={service.price} /> )}
           </div>
         </div>
       </section>

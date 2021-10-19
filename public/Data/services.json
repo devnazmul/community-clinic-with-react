@@ -1,41 +1,41 @@
 [
     {
-        "id": "1",
+        "id": 1,
         "serviceName": "EEG-based Neurofeedback",
         "image": "https://i.ibb.co/8srMhdx/1.png",
         "desc": "Neurofeedback is a form of biofeedback that uses your brain wave patterns (obtained via live EEG recording) to help you become more calm and focused. Based on a large number of placebo-controlled research studies, neurofeedback harnesses your brain’s natural neuroplasticity and regenerative system to improve your attention.",
         "price": "489"
     },
     {
-        "id": "2",
+        "id": 2,
         "serviceName": "Gynecology & pregnancy solutions",
         "image": "https://i.ibb.co/7JT14jw/2.png",
         "desc": "As a woman, your health undergoes a lot of changes throughout your life. Great care involves listening, and treating the physical and emotional needs of the women. Dr. Varshali Mali is an experienced female Gynecologist & Pregnancy doctor. She offers gynecology & pregnancy care for women of all ages starting from their first menstrual.",
         "price": "192"
     },
     {
-        "id": "3",
+        "id": 3,
         "serviceName": "Gynecology care services",
         "image": "https://i.ibb.co/8BY230h/3.png",
         "desc": "A woman undergoes a lot of physical and mental changes throughout the life. No matter what stage you are in life, doctor Varshali provides care, diagnosis, and education about changes happening to your body. Her gynecology services are aimed at providing routine and specialized care to maintain woman's health and treating diseases.",
         "price": "599"
     },
     {
-        "id": "4",
+        "id": 4,
         "serviceName": "Health screenings for men ages 40 to 64",
         "image": "https://i.ibb.co/60v3pWw/4.png",
         "desc": "Even if you feel fine, you should still see your provider for regular checkups. These visits can help you avoid problems in the future. For example, the only way to find out if you have high blood pressure is to have it checked regularly. High blood sugar and high cholesterol level also may not have any symptoms in the early stages.",
         "price": "150"
     },
     {
-        "id": "5",
+        "id": 5,
         "serviceName": "Brain Mapping (qEEG)",
         "image": "https://i.ibb.co/RzNdG6T/5.png",
         "desc": "Brain mapping, also known as quantitative electroencephalogram (qEEG), records the brain’s electrical activity at multiple sites on the surface of the scalp. By comparing the results to a database of healthy normal individuals the same age as the client, we are able to develop a treatment protocol that specifies sites on the scalp and brain.",
         "price": "999"
     },
     {
-        "id": "6",
+        "id": 6,
         "serviceName": "Neurocognitive Testing",
         "image": "https://i.ibb.co/wc080w8/6.png",
         "desc": "With our comprehensive battery of neurocognitive testing, we can measure your memory, attention, processing speed, and executive function.  We then compare it with results from other people your age.  You will be able to see what parts of your brain are stronger than others and which parts can use some training.  Cognitive testing.",

@@ -1,14 +1,36 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, useHistory } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import useAuth from "../../hooks/useAuth";
 
 export const Login = () => {
-  const { signinWithGoogle } = useAuth();
+  const history = useHistory();
+  const { user, isLoading, signinWithGoogle, signInWithEmail } = useAuth();
+
+  const [email, setEmail] = useState('');
+  const [password,setPassword] = useState('');
+
+  const saveEmail = (e) => {
+    setEmail(e.target.value);
+  }
+  const savePassword = (e) => {
+    setPassword(e.target.value);
+  }
+  const handleLogin = (e) => {
+    signInWithEmail(email,password);
+    e.preventDefault();
+  }
+  if (user.email) {
+    if (isLoading) {
+      history.goBack();
+    }
+  }
+
   return (
     <div className="Login pt-36 flex justify-center items-center h-screen">
       <div className="w-full md:w-1/2 flex mb-10">
-        <div className="bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
+        <div onSubmit={handleLogin} className="bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
+        <form>
           <h2 className="text-textPrimary text-5xl mb-1 font-medium title-font">
             Log In
           </h2>
@@ -17,6 +39,7 @@ export const Login = () => {
               Email
             </label>
             <input
+            onChange={saveEmail}
               type="email"
               id="email"
               name="email"
@@ -28,6 +51,7 @@ export const Login = () => {
               Password
             </label>
             <input
+            onChange={savePassword}
               type="password"
               id="password"
               name="password"
@@ -40,10 +64,8 @@ export const Login = () => {
               Sign Up.
             </NavLink>
           </p>
-          <button className="mt-8 text-white bg-bgPrimary border-0 py-2 px-6 focus:outline-none hover:bg-green-300 rounded text-lg">
-            Log In
-          </button>
-
+          <input type="submit"  value="Log In" className="mt-8 text-white bg-bgPrimary border-0 py-2 px-6 focus:outline-none hover:bg-green-300 rounded text-lg w-full" />
+          </form>
           <button
             onClick={signinWithGoogle}
             className="flex mx-auto  justify-center items-center w-1/2 mt-8 text-white bg-red-500 border-0 py-1 px-6 focus:outline-none hover:bg-green-300 rounded text-lg"

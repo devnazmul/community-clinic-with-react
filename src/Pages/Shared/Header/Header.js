@@ -5,8 +5,8 @@ import logo from "../../../images/site_identity/logo.png";
 import useAuth from "../../../hooks/useAuth";
 
 const Header = () => {
-
   const { logOut, user } = useAuth();
+
   return (
     <div className="z-40 text-gray-100 body-font shadow-lg fixed w-full bg-white">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -45,7 +45,7 @@ const Header = () => {
           >
             Contact Us
           </NavHashLink>
-
+          
           {user.email ? (
             <button
               onClick={logOut}
@@ -68,10 +68,10 @@ const Header = () => {
             to="/"
             className="hover:bg-gray-100 rounded-full px-1 py-1 flex justify-between items-center"
           >
-            <span className="text-textPrimary ml-2">{user.displayName}</span>
+            <span className="text-textPrimary ml-2 hidden lg:block">{user.displayName || user.email}</span>
             <img
-              className="h-10 w-10 rounded-full ml-3"
-              src={user.photoURL}
+              className="h-10 w-10 rounded-full ml-3 hidden md:block"
+              src={user.photoURL || 'https://i.ibb.co/fScLdY0/pic-1171831236-1.png'}
               alt=""
             />
           </div>
